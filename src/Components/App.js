@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import SpaList from './SpaList';
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
 
   return (
     <div>
+      <SpaList spaData={spaData}/>
       <h2>Phase-3 Project</h2>
       <p>{spas}</p>
     </div>
