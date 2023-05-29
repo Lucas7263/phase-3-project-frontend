@@ -12,14 +12,14 @@ function App() {
   }, []);
 
   const spas = spaData.map(spa => {
-    console.log(spa.dogs)
+    
       return (
         <div>
            <h3 key={spa.id}>{spa.name}</h3>
            <h4 key={spa.id}>{spa.location}</h4>
            <h5 key={spa.id}>{spa.price}</h5>
            
-        <img key={spa.id} src={spa.image} alt={spa.name}></img>
+        <img style={{  width: 300, height: 300 }} key={spa.id}  src={spa.image} alt={spa.name}></img>
           
             {spa.dogs.map(dog => (
              <div key={spa.id}>
@@ -40,7 +40,7 @@ function App() {
             
   })
    
- console.log(spaData)
+ 
 
   return (
     <div>
