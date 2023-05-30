@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import SpaList from './SpaList';
-import DogList from './DogList';
+// import DogList from './DogList';
 
 function App() {
   const [spaData, setSpaData] = useState([]);
@@ -15,7 +15,7 @@ function App() {
   return (
     <div>
       <SpaList spaData={spaData}/>
-      <DogList dogData={spaData}/>
+      {/* <DogList dogData={spaData}/> */}
     </div>
   );
 }
