@@ -3,7 +3,7 @@ import { Switch, Route } from 'react-router-dom';
 import SpaList from './SpaList';
 import DogList from './DogList';
 import Home from './Home';
-
+import NavBar from './NavBar';
 
 function App() {
   const [spaData, setSpaData] = useState([]);
@@ -17,11 +17,9 @@ function App() {
 
   return (
     <div>
+      <NavBar />
       <Switch>
-        <Route path="/">
-             <Home />
-             
-        </Route>
+       
         <Route path="/spas">
              <SpaList spaData={spaData}/>  
         </Route>
@@ -31,7 +29,10 @@ function App() {
         </Route>  
       
 
-     
+        <Route path="/">
+             <Home />
+             
+        </Route>
       </Switch>
       
     </div>
