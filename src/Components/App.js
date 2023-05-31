@@ -4,6 +4,7 @@ import SpaList from './SpaList';
 import DogList from './DogList';
 import Home from './Home';
 import NavBar from './NavBar';
+import AddDog from './AddDog';
 
 function App() {
   const [spaData, setSpaData] = useState([]);

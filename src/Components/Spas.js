@@ -12,6 +12,7 @@ function Spas({spa}) {
             <h4>Price: ${price}/day</h4>
             <img style={{  width: 300, height: 300 }} src={image} alt={name}></img>
             <button>View current residents</button>
+            <button>Check-in</button>
         
         </div>
     )
