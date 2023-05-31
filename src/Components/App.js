@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
+import { Switch, Route } from 'react-router-dom';
 import SpaList from './SpaList';
-// import DogList from './DogList';
+import DogList from './DogList';
+
 
 function App() {
   const [spaData, setSpaData] = useState([]);
@@ -14,8 +16,19 @@ function App() {
 
   return (
     <div>
-      <SpaList spaData={spaData}/>
-      {/* <DogList dogData={spaData}/> */}
+      <Switch>
+        <Route path="/">
+
+             <SpaList spaData={spaData}/>  
+        </Route>
+        <Route path="/dogs">
+             <DogList /> 
+        </Route>  
+      
+
+     
+      </Switch>
+      
     </div>
   );
 }
