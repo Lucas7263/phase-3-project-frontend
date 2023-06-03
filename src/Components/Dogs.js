@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Dogs({ dogs }) {
-
+    console.log(dogs)
     const {dog_name, breed, age, description, dog_image} = dogs
     return (
         <div>

@@ -4,7 +4,7 @@ import SpaList from './SpaList';
 import DogList from './DogList';
 import Home from './Home';
 import NavBar from './NavBar';
-import AddDog from './AddDog';
+// import AddDog from './AddDog';
 
 function App() {
   const [spaData, setSpaData] = useState([]);
@@ -25,10 +25,10 @@ function App() {
              <SpaList spaData={spaData}/>  
         </Route>
 
-        <Route path="/dogs">
+        <Route path="/guests"> 
              <DogList /> 
         </Route>  
-      
+      {/* change to guests path */}
 
         <Route path="/">
              <Home />
