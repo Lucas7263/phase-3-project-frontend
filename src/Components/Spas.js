@@ -21,7 +21,7 @@ function Spas({spa, viewGuests}) {
 
     }
         
-    
+    //Look up Flexbox video for CSS!
 
     return (
         <div className='spa'>
@@ -32,7 +32,7 @@ function Spas({spa, viewGuests}) {
             <h4>Price: ${price}/day</h4>
             <img style={{  width: 300, height: 300 }} src={image} alt={name}></img>
             <button onClick={thisDogsSpa}>View current residents</button>
-            <button>Check-in</button>
+           
         
         </div>
     )

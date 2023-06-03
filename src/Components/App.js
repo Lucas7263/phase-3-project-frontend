@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useHistory } from 'react-router-dom';
 import SpaList from './SpaList';
 import DogList from './DogList';
 import Home from './Home';
@@ -17,7 +17,30 @@ function App() {
     .then(data => setSpaData(data))
   }, []);
 
+  const history = useHistory();
 
+  function addDog(   { dogName, dogBreed, dogAge, dogDesc, dogImage, spa } ) {
+    fetch('http://localhost:9292/dogs', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        dog_name: dogName,
+        breed: dogBreed,
+        age: dogAge,
+        description: dogDesc,
+        dog_image: dogImage,
+        spa_id: spa
+      }
+      
+      ),
+    })
+      .then((res) => res.json())
+      .then((newDog) => setSpaData(dogs => [...dogs, newDog]))
+      .then(history.push(`/spas`))
+  }; 
+  
   
 
 
@@ -48,7 +71,7 @@ function App() {
         </Route>
 
         <Route path="/check-in">
-              <AddDog />
+              <AddDog spaData={spaData} addDog={addDog}/>
         </Route>
 
         <Route path="/">

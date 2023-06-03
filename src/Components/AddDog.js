@@ -1,17 +1,38 @@
 import React, { useState } from 'react';
 
 
-function AddDog() {
+function AddDog({ spaData, addDog }) {
     const [dogName, setDogName] = useState("");
     const [dogBreed, setDogBreed] = useState("");
     const [dogAge, setDogAge] = useState("");
     const [dogDesc, setDogDesc] = useState("");
     const [dogImage, setDogImage] = useState("");
+    // const [spa, setSpa] = useState("");
 
+    function handleSubmit(e) {
+        e.preventDefault()
+        
+        addDog({
+            dogName,
+            dogBreed,
+            dogAge,
+            dogDesc,
+            dogImage,
+            // spa
+        });
+        
+        setDogName("");
+        setDogBreed("");
+        setDogAge("");
+        setDogDesc("");
+        setDogImage("");
+        // setSpa("");
+        
+       }
 
     return (
         <div>
-            <form>
+            <form className="addDog" onSubmit={handleSubmit}>
                 <h2>Check-in your Dog!</h2>
 
                 <label className="label">
@@ -38,6 +59,17 @@ function AddDog() {
                     Selfie 
                     <input className="input" type="text" placeholder="Image" onChange={(e) => setDogImage(e.target.value)} value={dogImage}></input>
                 </label>
+
+                <label className='label'>
+                    <select className='dropdown' 
+                    >
+                    <option disabled selected="true">-- Select Spa --</option>
+                      {spaData.map((spa) => (
+                        <option key={spa.id} value={spa.id}>{spa.name}</option>
+                      ))}
+                    </select>
+                </label>
+                <button type="submit">Check-in!!</button>
             </form>
 
         </div>
@@ -46,3 +78,12 @@ function AddDog() {
 
 
 export default AddDog
+
+
+
+
+// onChange={(e) => {
+//     const selectedSpa = e.target.value;
+//     setSpa(selectedSpa);
+// }}
+// value={spa}
