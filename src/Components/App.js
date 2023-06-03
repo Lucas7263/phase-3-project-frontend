@@ -8,6 +8,7 @@ import NavBar from './NavBar';
 
 function App() {
   const [spaData, setSpaData] = useState([]);
+  const [guestList, setGuestList] = useState([]);
 
   useEffect(() => {
     fetch(`http://localhost:9292/spas`)
@@ -15,6 +16,10 @@ function App() {
     .then(data => setSpaData(data))
   }, []);
 
+  function viewGuests(guests) {
+    console.log(guests)
+    setGuestList(guests)
+  };
 
   return (
     <div>
@@ -22,11 +27,11 @@ function App() {
       <Switch>
        
         <Route path="/spas">
-             <SpaList spaData={spaData}/>  
+             <SpaList spaData={spaData} viewGuests={viewGuests}/>  
         </Route>
 
         <Route path="/guests"> 
-             <DogList /> 
+             <DogList dogGuests={guestList}/> 
         </Route>  
       {/* change to guests path */}
 

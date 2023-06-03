@@ -1,8 +1,7 @@
 import React from 'react';
-import DogList from './DogList';
 import { useHistory } from 'react-router-dom';
 
-function Spas({spa}) {
+function Spas({spa, viewGuests}) {
     // const [dogData, setDogData] = useState([]);
 
     const {name, location, employees, description, price, image, dogs} = spa
@@ -17,12 +16,15 @@ function Spas({spa}) {
             console.log(dogs) 
             let path = '/guests'
             history.push(path)
-            let dogData = <DogList dogGuests={dogs}/>
+
+
+            viewGuests(dogs)
+            // let dogData = <DogList dogGuests={dogs}/>
            
-            console.log(<DogList  dogGuests={dogs}/>)
+            // console.log(<DogList  dogGuests={dogs}/>)
            
             
-            return dogData
+            // return dogData
 
             //  <DogList dogGuests={dogArr}/>
           
@@ -32,6 +34,10 @@ function Spas({spa}) {
 
     }
         
+        // function guestList() {
+        //     viewGuests(dogs)
+           
+        // }
 
 
     return (

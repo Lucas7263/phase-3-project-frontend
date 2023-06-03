@@ -3,11 +3,11 @@ import Dogs from './Dogs'
 
 function DogList({ dogGuests }) {
     
-    let dogsArr = ["Abbey", "Lan", "Bear", "Tilly"];
+    // let dogsArr = ["Abbey", "Lan", "Bear", "Tilly"];
 
     console.log(dogGuests)
     // const dogs = dogGuests.map(dog => (<Dogs key={dog.id} dogs={dog}/>))
-    const dogs = dogsArr.map(dog => {
+    const dogs = dogGuests.map(dog => {
         console.log(dog)
         return (<Dogs key={dog.id} dogs={dog}/>)
     })
