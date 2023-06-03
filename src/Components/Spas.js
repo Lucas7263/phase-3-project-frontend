@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 
 function Spas({spa, viewGuests}) {
-    // const [dogData, setDogData] = useState([]);
+    
 
     const {name, location, employees, description, price, image, dogs} = spa
         
@@ -10,8 +10,7 @@ function Spas({spa, viewGuests}) {
          
          
         function thisDogsSpa() {
-            // let test = console.log("this is a test prop")
-        // dogs.map(dog => {
+   
 
             console.log(dogs) 
             let path = '/guests'
@@ -19,26 +18,10 @@ function Spas({spa, viewGuests}) {
 
 
             viewGuests(dogs)
-            // let dogData = <DogList dogGuests={dogs}/>
-           
-            // console.log(<DogList  dogGuests={dogs}/>)
-           
-            
-            // return dogData
-
-            //  <DogList dogGuests={dogArr}/>
-          
-           
-        // })
-      
 
     }
         
-        // function guestList() {
-        //     viewGuests(dogs)
-           
-        // }
-
+    
 
     return (
         <div className='spa'>

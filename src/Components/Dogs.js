@@ -10,6 +10,8 @@ function Dogs({ dogs }) {
             <h3>Age: {age}</h3>
             <p>{description}</p>
             <img style={{  width: 200, height: 200 }} src={dog_image} alt={dog_name}></img>
+            <button>Update Info</button>
+            <button>Check-Out</button>
         </div>
     )
 }
