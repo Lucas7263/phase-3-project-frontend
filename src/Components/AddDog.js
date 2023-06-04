@@ -7,7 +7,7 @@ function AddDog({ spaData, addDog }) {
     const [dogAge, setDogAge] = useState("");
     const [dogDesc, setDogDesc] = useState("");
     const [dogImage, setDogImage] = useState("");
-    // const [spa, setSpa] = useState("");
+    const [spa, setSpa] = useState("");
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -18,7 +18,7 @@ function AddDog({ spaData, addDog }) {
             dogAge,
             dogDesc,
             dogImage,
-            // spa
+            spa
         });
         
         setDogName("");
@@ -26,7 +26,7 @@ function AddDog({ spaData, addDog }) {
         setDogAge("");
         setDogDesc("");
         setDogImage("");
-        // setSpa("");
+        setSpa("");
         
        }
 
@@ -62,6 +62,11 @@ function AddDog({ spaData, addDog }) {
 
                 <label className='label'>
                     <select className='dropdown' 
+                        onChange={(e) => {
+                            const selectedSpa = e.target.value;
+                            setSpa(selectedSpa);
+                        }}
+                        value={spa}
                     >
                     <option disabled selected="true">-- Select Spa --</option>
                       {spaData.map((spa) => (

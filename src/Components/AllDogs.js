@@ -20,15 +20,12 @@ const dogs = dogData.map(dog => {
          return (<EveryDog key={dog.id} dogs={dog}/>)
      })
 
-     function clicked() {
-        console.log("I was clicked")
-     };
-
+   
 
      return(
          <div>
              {dogs}
-             <button onClick={clicked}>Click Me!</button>
+          
          </div>
      )
  
