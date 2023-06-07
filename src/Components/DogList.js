@@ -1,15 +1,15 @@
 import React from 'react';
 import Dogs from './Dogs'
 
-function DogList({ dogGuests }) {
+function DogList({ dogGuests, checkOut }) {
     
     // let dogsArr = ["Abbey", "Lan", "Bear", "Tilly"];
 
-    console.log(dogGuests)
+    
     // const dogs = dogGuests.map(dog => (<Dogs key={dog.id} dogs={dog}/>))
     const dogs = dogGuests.map(dog => {
-        console.log(dog)
-        return (<Dogs key={dog.id} dogs={dog}/>)
+       
+        return (<Dogs key={dog.id} dogs={dog} checkOut={checkOut}/>)
     })
     return(
         <div>

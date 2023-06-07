@@ -1,9 +1,19 @@
 import React from 'react';
 
 
-function EveryDog({ dogs }) {
-    console.log(dogs)
-    const {dog_name, breed, age, description, dog_image} = dogs
+function EveryDog({ dogs, checkOut }) {
+  
+    const {dog_name, breed, age, description, dog_image, id} = dogs
+
+
+    function deletesDog() {
+        fetch(`http://localhost:9292/dogs/${id}`, {
+            method: "DELETE",
+        })
+            .then((res) => res.json())
+            .then((deletedDog) => checkOut(deletedDog))
+    }
+
     return (
         <div>
             <h2>{dog_name}</h2>
@@ -12,7 +22,7 @@ function EveryDog({ dogs }) {
             <p>{description}</p>
             <img style={{  width: 200, height: 200 }} src={dog_image} alt={dog_name}></img>
             <button>Update Info</button>
-            <button>Check-Out</button>
+            <button className='checkout' onClick={deletesDog}>Check-Out</button>
         </div>
     )
 }

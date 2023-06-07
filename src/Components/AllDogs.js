@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import EveryDog from './EveryDog';
 
 // , {useState, useEffect} 
-function AllDogs() {
+function AllDogs({ deleteDog }) {
     
     // { allDogs }
 const [dogData, setDogData] = useState([]);
@@ -16,8 +16,8 @@ useEffect(() => {
     
     
 const dogs = dogData.map(dog => {
-         console.log(dog)
-         return (<EveryDog key={dog.id} dogs={dog}/>)
+        
+         return (<EveryDog key={dog.id} dogs={dog} checkOut={deleteDog}/>)
      })
 
    

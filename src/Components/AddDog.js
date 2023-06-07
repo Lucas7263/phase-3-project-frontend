@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {useHistory} from 'react-router-dom';
 
 
 function AddDog({ spaData, addDog }) {
@@ -7,29 +8,42 @@ function AddDog({ spaData, addDog }) {
     const [dogAge, setDogAge] = useState("");
     const [dogDesc, setDogDesc] = useState("");
     const [dogImage, setDogImage] = useState("");
-    const [spa, setSpa] = useState("");
+    const [spaId, setSpaId] = useState("");
+
+
+    const history = useHistory(); 
 
     function handleSubmit(e) {
-        e.preventDefault()
+       e.preventDefault() 
         
-        addDog({
-            dogName,
-            dogBreed,
-            dogAge,
-            dogDesc,
-            dogImage,
-            spa
-        });
+
+        fetch('http://localhost:9292/dogs', {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+
+              dog_name: dogName,
+              breed: dogBreed,
+              age: dogAge,
+              description: dogDesc,
+              dog_image: dogImage,
+              spa_id: spaId
+            }
         
-        setDogName("");
-        setDogBreed("");
-        setDogAge("");
-        setDogDesc("");
-        setDogImage("");
-        setSpa("");
-        
+            ),
+          })
+            .then((res) => res.json())
+            .then((newDog) => {
+                addDog(newDog)
+                history.push(`/spas`)
+            })
+           
        }
 
+
+     
     return (
         <div>
             <form className="addDog" onSubmit={handleSubmit}>
@@ -64,11 +78,11 @@ function AddDog({ spaData, addDog }) {
                     <select className='dropdown' 
                         onChange={(e) => {
                             const selectedSpa = e.target.value;
-                            setSpa(selectedSpa);
+                            setSpaId(selectedSpa);
                         }}
-                        value={spa}
+                        value={spaId}
                     >
-                    <option disabled selected="true">-- Select Spa --</option>
+                    <option  defaultValue={true}>-- Select Spa --</option>
                       {spaData.map((spa) => (
                         <option key={spa.id} value={spa.id}>{spa.name}</option>
                       ))}
