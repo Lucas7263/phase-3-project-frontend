@@ -65,21 +65,8 @@ function UpdateDog({  handleChange, editDog, dogInfo}) {
                     Selfie 
                     <input className="input" type="text" name="dog_image" placeholder="Image" onChange={editDoggo} value={dogInfo.dog_image}></input>
                 </label>
-
-                {/* <label className='label'>
-                    <select className='dropdown' 
-                        onChange={(e) => {
-                            const selectedSpa = e.target.value;
-                            setSpa(selectedSpa);
-                        }}
-                        value={spa_id}
-                    >
-                    <option disabled selected="true">-- Select Spa --</option>
-                      {spaData.map((spa) => (
-                        <option key={spa.id} value={spa.id}>{spa.name}</option>
-                      ))}
-                    </select>
-                </label> */}
+                <img style={{  width: 400, height: 400 }} src={dogInfo.dog_image} alt={dogInfo.dog_name}></img>
+      
                 <button type="submit">Check-in!!</button>
             </form>
         </div>
