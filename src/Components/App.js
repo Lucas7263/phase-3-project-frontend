@@ -12,7 +12,8 @@ function App() {
   const [spaData, setSpaData] = useState([]);
   const [guestList, setGuestList] = useState([]);
   const [dogState, setDogState] = useState([]);
-  const [clickedDog, setClickedDog] = useState("");
+  const [dogInfo, setDogInfo] = useState([]);
+  
   
 
   useEffect(() => {
@@ -30,8 +31,7 @@ function App() {
   // const history = useHistory();
 
   function addDog(newDog) {
-    console.log(newDog)
-    console.log(spaData)
+  
     setSpaData([...spaData, newDog])
   
   }; 
@@ -58,17 +58,22 @@ function App() {
     setGuestList(guests)
   };
 
+  function amendDog(dog) {
+    setDogInfo(dog)
+  }
+
+
 
   function handleChange(name, value) {
-    setClickedDog({
-      ...clickedDog, 
+    setDogInfo({
+      ...dogInfo,  
       [name]: value
     })
   }
 
   function editDog(updatedDog) {
     const updatedDogsArr = dogState.map(dog => dog.id === updatedDog.id ? updatedDog : dog)
-        setClickedDog(updatedDogsArr)
+        setDogInfo(updatedDogsArr) 
         setDogState(updatedDogsArr)
 }
   // deleteDog={handleDelete}
@@ -84,7 +89,7 @@ function App() {
         </Route>
 
         <Route path="/guests"> 
-             <DogList dogGuests={guestList} checkOut={handleDeleteDog}/> 
+             <DogList dogGuests={guestList} checkOut={handleDeleteDog} amendDog={amendDog}/> 
         </Route>  
       {/* change to guests path */}
 
@@ -97,7 +102,7 @@ function App() {
         </Route>
 
         <Route path="/update">
-              <UpdateDog  clickedDog={clickedDog} handleChange={handleChange} editDog={editDog}/>
+              <UpdateDog   dogInfo={dogInfo}  handleChange={handleChange} editDog={editDog}/>
         </Route>
 
         <Route path="/">

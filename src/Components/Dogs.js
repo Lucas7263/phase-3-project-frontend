@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
-import UpdateDog from './UpdateDog';
+import { useHistory } from 'react-router-dom'
 
 
 
-function Dogs({ dogs, checkOut }) {
+
+function Dogs({ dogs, checkOut, amendDog }) {
     
     const {dog_name, breed, age, description, dog_image, id} = dogs
 
@@ -23,20 +23,18 @@ function Dogs({ dogs, checkOut }) {
             // .then((res) => res.json())
             // .then((deletedDog) => checkOut(deletedDog))
     }
-    // 
-    // function updateDog() {
-    //     fetch(`http://localhost:9292/dogs/${id}`, {
-    //         method: "PATCH",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify({
 
-    //         })
-    //     })
-    // }
+    const history = useHistory()
+    
+    function updateDog() {
+        
+        let path = '/update'
+        history.push(path)
 
-
+        amendDog(dogs)
+}
+    
+    
     return (
         <div>
             <h2>{dog_name}</h2>
@@ -44,12 +42,9 @@ function Dogs({ dogs, checkOut }) {
             <h3>Age: {age}</h3>
             <p>{description}</p>
             <img style={{  width: 200, height: 200 }} src={dog_image} alt={dog_name}></img>
-            <Link to="update">
-            <button onClick={
-                <div>{<UpdateDog  />}</div>
-            }>Update Info</button> 
-            </Link>
-        
+            
+            <button onClick={updateDog}>Update Info</button> 
+          
             <button className='checkout' onClick={deletesDog}>Check-Out</button>
         </div>
     )

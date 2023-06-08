@@ -1,37 +1,34 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom';
 
-
-function UpdateDog({ clickedDog, handleChange, editDog }) {
+// clickedDog,
+function UpdateDog({  handleChange, editDog, dogInfo}) {
     const history = useHistory();
-    // const [formData, setFormData] = useState({
-    //     dog_name: "",
-    //     breed: "",
-    //     age: "",
-    //     description: "",
-    //     dog_image: "",
-    //     spa_id: ""
+    
+        console.log(dogInfo)
 
-    // })
-        function ChangeDog(e) {
+       console.log(dogInfo.dog_name)
+
+        function editDoggo(e) {
             handleChange(e.target.name, e.target.value)
         }
    
   
-      function updateDog() {
-        fetch(`http://localhost:9292/dogs/${clickedDog.id}`, {
+      function updateDog(e) {
+        e.preventDefault()
+        fetch(`http://localhost:9292/dogs/${dogInfo.id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
                 
-                dog_name: clickedDog.name,
-                breed: clickedDog.dogBreed,
-                age: clickedDog.dogAge,
-                description: clickedDog.dogDesc,
-                dog_image: clickedDog.dogImage,
-                spa_id: clickedDog.spa_id
+                dog_name: dogInfo.dog_name,
+                breed: dogInfo.breed,
+                age: dogInfo.age,
+                description: dogInfo.description,
+                dog_image: dogInfo.dog_image,
+                spa_id: dogInfo.spa_id
             })
         })
         .then((res) => res.json())
@@ -39,34 +36,34 @@ function UpdateDog({ clickedDog, handleChange, editDog }) {
         history.push("/spas")
     }
     return (
-       
+        // clickedDog.dogName
             <div>
             <form className="addDog" onSubmit={updateDog}>
                 <h2>Check-in your Dog!</h2>
 
                 <label className="label">
                     Name 
-                    <input className="input" type="text" name="dog_name" placeholder="Name" onChange={ChangeDog} value={clickedDog.dogName}></input>
+                    <input className="input" type="text" name="dog_name" placeholder="Name" onChange={editDoggo} value={dogInfo.dog_name}></input>
                 </label>
 
                 <label className="label">
                     Breed 
-                    <input className="input" type="text" name="breed" placeholder="Breed" onChange={ChangeDog} value={clickedDog.dogBreed}></input>
+                    <input className="input" type="text" name="breed" placeholder="Breed" onChange={editDoggo} value={dogInfo.breed}></input>
                 </label>
 
                 <label className="label">
                     Age 
-                    <input className="input" type="text" name="age" placeholder="Age" onChange={ChangeDog} value={clickedDog.dogAge}></input>
+                    <input className="input" type="text" name="age" placeholder="Age" onChange={editDoggo} value={dogInfo.age}></input>
                 </label>
 
                 <label className="label">
                     Doggy Bio
-                    <input className="input" type="text" name="description" placeholder="Bio" onChange={ChangeDog} value={clickedDog.dogDesc}></input>
+                    <input className="input" type="text" name="description" placeholder="Bio" onChange={editDoggo} value={dogInfo.description}></input>
                 </label>
 
                 <label className="label">
                     Selfie 
-                    <input className="input" type="text" name="dog_image" placeholder="Image" onChange={ChangeDog} value={clickedDog.dogImage}></input>
+                    <input className="input" type="text" name="dog_image" placeholder="Image" onChange={editDoggo} value={dogInfo.dog_image}></input>
                 </label>
 
                 {/* <label className='label'>
