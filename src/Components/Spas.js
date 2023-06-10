@@ -10,8 +10,8 @@ function Spas({spa, viewGuests}) {
          
          
         function thisDogsSpa() {
-   
-
+    
+        
             
             let path = '/guests'
             history.push(path)

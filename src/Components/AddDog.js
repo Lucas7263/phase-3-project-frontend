@@ -100,9 +100,3 @@ export default AddDog
 
 
 
-
-// onChange={(e) => {
-//     const selectedSpa = e.target.value;
-//     setSpa(selectedSpa);
-// }}
-// value={spa}

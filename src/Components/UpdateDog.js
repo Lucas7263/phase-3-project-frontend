@@ -1,7 +1,7 @@
 import React from 'react';
 import {useHistory} from 'react-router-dom';
 
-// clickedDog,
+
 function UpdateDog({  handleChange, editDog, dogInfo}) {
     const history = useHistory();
     
@@ -34,9 +34,10 @@ function UpdateDog({  handleChange, editDog, dogInfo}) {
         .then((res) => res.json())
         .then(editDog);
         history.push("/spas")
+   
     }
     return (
-        // clickedDog.dogName
+        
             <div>
             <form className="addDog" onSubmit={updateDog}>
                 <h2>Check-in your Dog!</h2>
@@ -67,7 +68,7 @@ function UpdateDog({  handleChange, editDog, dogInfo}) {
                 </label>
                 <img style={{  width: 400, height: 400 }} src={dogInfo.dog_image} alt={dogInfo.dog_name}></img>
       
-                <button type="submit">Check-in!!</button>
+                <button type="submit">Update</button>
             </form>
         </div>
     )

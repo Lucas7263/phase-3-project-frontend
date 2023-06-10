@@ -1,26 +1,30 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Spas from './Spas';
+
 
 
 
 // , {useState, useEffect}
 // spaData,
-function SpaList({  spaData, viewGuests  }) {
-    // const [spaData, setSpaData] = useState([]);
+function SpaList({   viewGuests  }) {
+  const [spaData, setSpaData] = useState([]);
 
-    // useEffect(() => {
-    //     fetch(`http://localhost:9292/spas`)
-    //     .then(res => res.json())
-    //     .then(data => setSpaData(data))
-    //   }, [setSpaData]);
+  useEffect(() => {
+    fetch(`http://localhost:9292/spas`)
+    .then(res => res.json())
+    .then(data => setSpaData(data))
+  }, []);
        
     const spas = spaData.map(spa => {
        
-        return (<Spas key={spa.id} spa={spa} viewGuests={viewGuests}/> ) //Error for POST occurs here
+        return (
+        <Spas key={spa.id} spa={spa} viewGuests={viewGuests}/>
+        
+        ) 
     })
 
-  
-  console.log(spaData)
+   
+    
    
     return(
         <div>

@@ -13,6 +13,7 @@ function App() {
   const [guestList, setGuestList] = useState([]);
   const [dogState, setDogState] = useState([]);
   const [dogInfo, setDogInfo] = useState([]);
+
   
   
 
@@ -22,33 +23,25 @@ function App() {
     .then(data => setSpaData(data))
   }, []);
 
-//   useEffect(() => {
-//     fetch(`http://localhost:9292/dogs`)
-//     .then (res => res.json())
-//     .then (dogs => setDogData(dogs))
-// }, [])
 
-  // const history = useHistory();
+
+  
 
   function addDog(newDog) {
   
     setSpaData([...spaData, newDog])
-  
+      
   }; 
   
 
-  // function handleDelete(id) {
-  //     const deleteDog = spaData.filter((dog) => dog.id === !id)
-  //     setSpaData(deleteDog)
-  // }
-  
+
 
   function handleDeleteDog(id) {
-    // console.log(id)
-    const deleteDog = spaData.filter((dog) => console.log(dog))
-    // console.log(deleteDog)
+ 
+    const deleteDog = spaData.filter((dog) => dog.id !== id)
+    
     setSpaData(deleteDog)
-    // dog.id !== id
+  
 }
 
 
@@ -56,7 +49,9 @@ function App() {
   function viewGuests(guests) {
    
     setGuestList(guests)
+   
   };
+
 
   function amendDog(dog) {
     setDogInfo(dog)
@@ -76,22 +71,20 @@ function App() {
         setDogInfo(updatedDogsArr) 
         setDogState(updatedDogsArr)
 }
-  // deleteDog={handleDelete}
 
-  // spaData={spaData}
   return (
     <div>
       <NavBar />
       <Switch>
-       
+    
         <Route path="/spas">
-             <SpaList spaData={spaData} viewGuests={viewGuests}/>  
+             <SpaList viewGuests={viewGuests}/>  
         </Route>
 
         <Route path="/guests"> 
-             <DogList dogGuests={guestList} checkOut={handleDeleteDog} amendDog={amendDog}/> 
+             <DogList dogGuests={guestList} checkOut={handleDeleteDog} amendDog={amendDog}  /> 
         </Route>  
-      {/* change to guests path */}
+      
 
         <Route path="/all-dogs">
               <AllDogs />
@@ -114,25 +107,4 @@ function App() {
   );
 }
 
-
-
-  // fetch('http://localhost:9292/dogs', {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({
-    //     dog_name: dogName,
-    //     breed: dogBreed,
-    //     age: dogAge,
-    //     description: dogDesc,
-    //     dog_image: dogImage,
-    //     spa_id: spa
-    //   }
-    //   // need local state possibly to fix state not being updated.
-    //   ),
-    // })
-    //   .then((res) => res.json())
-    //   .then((newDog) => setSpaData(dogs => [...dogs, newDog]))
-    //   .then(history.push(`/spas`))
 export default App;

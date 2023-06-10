@@ -12,16 +12,13 @@ function Dogs({ dogs, checkOut, amendDog }) {
     function deletesDog() {
         fetch(`http://localhost:9292/dogs/${id}`, {
             method: "DELETE",
-            // headers: {
-            //     "Content-Type": "application/json",
-            // },
-            // body: JSON.stringify({
-
-            // })
-        })    //error oocurs on this line
+      
+        })   
+          
             checkOut(id)
-            // .then((res) => res.json())
-            // .then((deletedDog) => checkOut(deletedDog))
+            let path = '/spas'
+            history.push(path)
+           
     }
 
     const history = useHistory()
