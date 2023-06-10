@@ -27,14 +27,15 @@ function Spas({spa, viewGuests}) {
    
 
     return (
-        <div  class="flexbox-container">
-            <div  class="flexbox-item flexbox-item">
+        <div  >
+            <div  class="flexbox-item flexbox-spa">
             <h2>{name}</h2>
+            <img style={{  width: 200, height: 150 }} src={image} alt={name}></img>
             <h3>{location}</h3>
             <h4>Number of Employees: {employees}</h4>
             <p>{description}</p>
             <h4>Price: ${price}/day</h4>
-            <img style={{  width: 100, height: 100 }} src={image} alt={name}></img>
+            
             <button onClick={thisDogsSpa}>View current residents</button>
             </div>
       

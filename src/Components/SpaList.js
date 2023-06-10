@@ -25,7 +25,7 @@ function SpaList({   viewGuests  }) {
 
   
     return(
-        <div class="flexbox-container">
+        <div class="flexbox-container-spas">
            
            {spas}
         

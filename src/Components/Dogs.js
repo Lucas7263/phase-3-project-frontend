@@ -33,7 +33,7 @@ function Dogs({ dogs, checkOut, amendDog }) {
     
     
     return (
-        <div>
+        <div class="flexbox-item flexbox-dog">
             <h2>{dog_name}</h2>
             <h3>{breed}</h3>
             <h3>Age: {age}</h3>

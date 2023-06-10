@@ -15,12 +15,8 @@ function DogList({  dogGuests, checkOut, amendDog}) {
     return(
         
         
-        <div >
-            <ul >
+        <div class="flexbox-container-dogs">
                 {dogs} 
-            </ul>
-            
-           
         </div>
         
     )

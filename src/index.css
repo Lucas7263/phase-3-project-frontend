@@ -13,14 +13,35 @@ code {
 } */
 
 
-.flexbox-container {
+.flexbox-container-spas {
     display: flex;
+    height: 800px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: yellow;
 }
 
 
-.flexbox-item {
+.flexbox-spa {
     width: 200px;
     margin: 10px;
     border: 3px solid #333;
     background-color: #dfdfdf;
+}
+
+
+.flexbox-container-dogs {
+  display: flex;
+  height: 800px;
+  justify-content: space-around;
+  align-items: center;
+  background-color: yellow;
+}
+
+
+.flexbox-dog {
+  width: 200px;
+  margin: 10px;
+  border: 3px solid #333;
+  background-color: #dfdfdf;
 }
