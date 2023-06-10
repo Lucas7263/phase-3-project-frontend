@@ -22,16 +22,22 @@ function Spas({spa, viewGuests}) {
     }
         
     //Look up Flexbox video for CSS!
+   
+    // class="flexbox-item flexbox-item-2"
+   
 
     return (
-        <div className='spa'>
+        <div  class="flexbox-container">
+            <div  class="flexbox-item flexbox-item">
             <h2>{name}</h2>
             <h3>{location}</h3>
             <h4>Number of Employees: {employees}</h4>
             <p>{description}</p>
             <h4>Price: ${price}/day</h4>
-            <img style={{  width: 300, height: 300 }} src={image} alt={name}></img>
+            <img style={{  width: 100, height: 100 }} src={image} alt={name}></img>
             <button onClick={thisDogsSpa}>View current residents</button>
+            </div>
+      
            
         
         </div>
