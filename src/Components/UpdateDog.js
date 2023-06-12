@@ -5,9 +5,7 @@ import {useHistory} from 'react-router-dom';
 function UpdateDog({  handleChange, editDog, dogInfo}) {
     const history = useHistory();
     
-        console.log(dogInfo)
-
-       console.log(dogInfo.dog_name)
+  
 
         function editDoggo(e) {
             handleChange(e.target.name, e.target.value)

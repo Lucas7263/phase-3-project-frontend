@@ -17,8 +17,8 @@ function App() {
   
   
 
-  useEffect(() => {
-    fetch(`http://localhost:9292/spas`)
+   useEffect(() => {
+     fetch(`http://localhost:9292/spas`)
     .then(res => res.json())
     .then(data => setSpaData(data))
   }, []);
@@ -28,7 +28,7 @@ function App() {
   
 
   function addDog(newDog) {
-  
+    console.log(newDog)
     setSpaData([...spaData, newDog])
       
   }; 
@@ -61,13 +61,13 @@ function App() {
 
   function handleChange(name, value) {
     setDogInfo({
-      ...dogInfo,  
-      [name]: value
+      ...dogInfo,  [name]: value //Shallow copy
+    
     })
   }
 
   function editDog(updatedDog) {
-    const updatedDogsArr = dogState.map(dog => dog.id === updatedDog.id ? updatedDog : dog)
+    const updatedDogsArr = dogState.map(dog => dog.id === updatedDog.id ? updatedDog : dog) // if dog.id matches updatedDog.id then updatedDog is returned if not then dog is returned
         setDogInfo(updatedDogsArr) 
         setDogState(updatedDogsArr)
 }
@@ -78,7 +78,7 @@ function App() {
       <Switch>
     
         <Route path="/spas">
-             <SpaList viewGuests={viewGuests}/>  
+             <SpaList    viewGuests={viewGuests}/>  
         </Route>
 
         <Route path="/guests"> 

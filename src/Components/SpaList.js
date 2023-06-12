@@ -4,8 +4,7 @@ import Spas from './Spas';
 
 
 
-// , {useState, useEffect}
-// spaData,
+
 function SpaList({   viewGuests  }) {
   const [spaData, setSpaData] = useState([]);
 
@@ -26,10 +25,7 @@ function SpaList({   viewGuests  }) {
   
     return(
         <div class="flexbox-container-spas">
-           
            {spas}
-        
-        
         </div>
     )
 }
