@@ -19,6 +19,7 @@ code {
     justify-content: space-around;
     align-items: center;
     background-color: purple;
+   
 }
 
 
@@ -36,6 +37,7 @@ code {
   justify-content: space-around;
   align-items: center;
   background-color: blue;
+  flex-wrap: wrap;
 }
 
 
