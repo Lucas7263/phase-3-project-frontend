@@ -1,16 +1,8 @@
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+ body {
+  background-color: rgb(112, 160, 175);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
+
 
 
 .flexbox-container-spas {
@@ -27,7 +19,7 @@ code {
     width: 200px;
     margin: 10px;
     border: 3px solid #333;
-    background-color: #dfdfdf;
+    background-color: rgb(226, 226, 12);
 }
 
 
@@ -36,7 +28,7 @@ code {
   height: 800px;
   justify-content: space-around;
   align-items: center;
-  background-color: blue;
+  background-color: rgb(83, 83, 145);
   flex-wrap: wrap;
 }
 
@@ -44,10 +36,10 @@ code {
 .flexbox-dog {
   width: 200px;
   margin: 10px;
-  border: 3px solid #333;
-  background-color: #dfdfdf;
+  border: 5px solid black;
+  background-color: rgb(96, 155, 96);
 }
-
+/* rgb(255, 165, 47) */
 .navbar {
   display: flex;
   margin: 1rem 2rem;
@@ -60,4 +52,18 @@ nav .list {
   display: flex;
   padding: 10px;
   
+}
+
+.btn1 {
+  
+
+  background-color: rgb(96, 155, 96);
+
+}
+
+.btn2 {
+  margin-left: 35px;
+
+  background-color: green;
+
 }
