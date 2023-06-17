@@ -3,7 +3,7 @@ import React from 'react';
 
 function EveryDog({ dogs }) {
   
-    const {dog_name, breed, age, description, dog_image, id} = dogs
+    const {dog_name, breed, age, description, dog_image} = dogs
 
 
 

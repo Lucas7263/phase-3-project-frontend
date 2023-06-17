@@ -54,16 +54,30 @@ nav .list {
   
 }
 
-.btn1 {
-  
-
-  background-color: rgb(96, 155, 96);
+.btn-1 {
+  margin-left: 2px;
+  border: 1px solid black;
+  background-color: rgb(223, 223, 45)
 
 }
 
-.btn2 {
-  margin-left: 35px;
+.btn-2 {
+  margin-left: 36px;
+  margin-bottom: 2px;
+  border: 1px solid black;
+  background-color: purple;
 
-  background-color: green;
+}
 
+.home {
+  margin: auto;
+  text-align: center;
+
+}
+
+.flexbox-container-img {
+  display: flex;
+ justify-content: space-around;
+ align-items: center;
+ flex-wrap: wrap;
 }

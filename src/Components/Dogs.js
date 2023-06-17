@@ -42,9 +42,12 @@ function Dogs({ dogs, checkOut, amendDog }) {
             <p>{description}</p>
             
             
-            <button class="btn1" onClick={updateDog}>Update Info</button> 
+           <div>
+           <button className="btn-1" onClick={updateDog}>Update Info</button> 
           
-            <button class="btn2" className='checkout' onClick={deletesDog}>Check-Out</button>
+          <button className="btn-2"  onClick={deletesDog}>Check-Out</button>
+           </div>
+           
         </div>
     )
 }

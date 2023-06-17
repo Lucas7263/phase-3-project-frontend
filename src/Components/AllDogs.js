@@ -23,7 +23,7 @@ const dogs = dogData.map(dog => {
    
 
      return(
-         <div>
+         <div class="flexbox-container-all-dogs">
              {dogs}
           
          </div>
