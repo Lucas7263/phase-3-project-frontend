@@ -30,20 +30,14 @@ function App() {
   function addDog(newDog) {
   
     const newGuest = spaData.map(spa => { //Drill down into the assocatied dogs array. Then make copy of array then add the newDog to that copy
-     console.log(spa)
+
        if(spa.id === newDog.spa_id) {
-        // If spa.id is the same as the new dogs spa_id add it to it's dog array
-        // console.log(spa.dogs)
+   
         
-      
-      //  const addedDog =  spa.dogs.map(dogs => {
-      //        return [...spa.dogs, newDog]
-      //  })
-        console.log(spa)
        const addedDog = [...spa.dogs, newDog]
         console.log(...spa.dogs, newDog)
         console.log(addedDog)
-        // console.log(spa.dogs)
+    
         spa.dogs = addedDog
           return spa
        } else {
@@ -52,27 +46,35 @@ function App() {
        
     })
 
-    const newDogsArr = spaData.map(spa => { //
-      spa.dogs
-    })
+ 
     console.log(newGuest)
     setSpaData(newGuest)
-    // setSpaData([...spaData, newDog])
-    // setSpaData(newGuest)
-    // setDogState([...dogState, newDog])
-    // [...spaData, newDog]
+
   }; 
   
 
 
 
-  function handleDeleteDog(id) {
-
-    const deleteDog = spaData.map(dog => {
+  function handleDeleteDog(deletedDog) {
+   
+    const deleteDog = spaData.map(spa => {
+      
+        if(spa.id === deletedDog.spa_id) {
+          
+         const checkOut = spa.dogs.filter((dog) => dog.id !== deletedDog.id)
         
+          console.log(checkOut)
+          spa.dogs = checkOut
+          return spa
+    }
+    else {
+      return spa
+    }
     })
-    // const deleteDog = spaData.filter((dog) => dog.id !== id)
     
+    
+    // const deletesDog = spaData.filter((dog) => dog.id !== id)
+    console.log(deleteDog)
     setSpaData(deleteDog)
   
 }
