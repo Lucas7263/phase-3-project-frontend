@@ -33,10 +33,7 @@ function App() {
 
        if(spa.id === newDog.spa_id) {
    
-        
        const addedDog = [...spa.dogs, newDog]
-        console.log(...spa.dogs, newDog)
-        console.log(addedDog)
     
         spa.dogs = addedDog
           return spa
@@ -45,11 +42,8 @@ function App() {
        }
        
     })
-
- 
-    console.log(newGuest)
+    
     setSpaData(newGuest)
-
   }; 
   
 
@@ -63,7 +57,7 @@ function App() {
           
          const checkOut = spa.dogs.filter((dog) => dog.id !== deletedDog.id)
         
-          console.log(checkOut)
+          
           spa.dogs = checkOut
           return spa
     }
@@ -71,12 +65,8 @@ function App() {
       return spa
     }
     })
-    
-    
-    // const deletesDog = spaData.filter((dog) => dog.id !== id)
-    console.log(deleteDog)
-    setSpaData(deleteDog)
   
+    setSpaData(deleteDog)
 }
 
 
@@ -103,19 +93,16 @@ function App() {
 
   function editDog(updatedDog) {
     
-    console.log(updatedDog)
-    const updatedDogsArr = dogState.map(dog => dog.id === updatedDog.id ? updatedDog : dog) // if dog.id matches updatedDog.id then updatedDog is returned if not then dog is returned
-       
+  
+    const updatedDogsArr = dogState.map(dog => dog.id === updatedDog.id ? updatedDog : dog) 
         const updatedSpadata = spaData.map(spa => {
           if (spa.id === updatedDog.spa_id) {
-            // spa.dogs ? updatedDog.spa_id :   
-            // Go to the dogs array from this spa
-            // find the dog that I want to change 
+       
             const updatedInfo = spa.dogs.map((dog) => dog.id === updatedDog.id ? updatedDog : dog) 
 
             spa.dogs = updatedInfo
             return spa
-            // set dogs key of spa to be updated info
+          
             
           } else {
             return spa
@@ -126,7 +113,7 @@ function App() {
         }) 
         setSpaData(updatedSpadata) 
         
-        setDogState(updatedDogsArr) //two state updates
+        setDogState(updatedDogsArr) 
 }
 
   return (

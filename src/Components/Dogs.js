@@ -14,7 +14,7 @@ function Dogs({ dogs, checkOut, amendDog }) {
             method: "DELETE",
       
         })   
-            console.log(dogs)
+            
             // checkOut(id)
             checkOut(dogs)
             let path = '/spas'

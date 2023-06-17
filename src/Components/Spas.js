@@ -21,9 +21,6 @@ function Spas({spa, viewGuests}) {
 
     }
         
-    //Look up Flexbox video for CSS!
-   
-    // class="flexbox-item flexbox-item-2"
    
 
     return (
