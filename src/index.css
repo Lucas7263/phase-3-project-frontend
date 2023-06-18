@@ -65,8 +65,14 @@ nav .list {
   margin-left: 36px;
   margin-bottom: 2px;
   border: 1px solid black;
-  background-color: purple;
+  background-color: orangered;
 
+}
+
+.guest-btn {
+  margin-left: 55px;
+  margin-bottom: 10px;
+  border: 1px solid black;
 }
 
 .home {
@@ -80,4 +86,24 @@ nav .list {
  justify-content: space-around;
  align-items: center;
  flex-wrap: wrap;
+}
+
+.flexbox-container-all-dogs {
+  display: flex;
+
+  height: 920px;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(83, 83, 145);
+  flex-wrap: wrap;
+}
+
+.flexbox-all-dogs {
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 1;
+  width: 200px;
+  margin: 10px;
+  border: 5px solid black;
+  background-color: rgb(96, 155, 96);
 }

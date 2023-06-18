@@ -33,7 +33,7 @@ function Spas({spa, viewGuests}) {
             <p>{description}</p>
             <h4>Price: ${price}/day</h4>
             
-            <button onClick={thisDogsSpa}>View guests</button>
+            <button className="guest-btn" onClick={thisDogsSpa}>View guests</button>
             </div>
       
            
