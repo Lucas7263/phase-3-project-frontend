@@ -46,8 +46,10 @@ function AddDog({ spaData, addDog }) {
      
     return (
         <div>
-            <form className="addDog" onSubmit={handleSubmit}>
+            <form className="add-Dog" onSubmit={handleSubmit}>
                 <h2>Check-in your Dog!</h2>
+
+                <div class="flexbox-container-form">
 
                 <label className="label">
                     Name 
@@ -75,6 +77,7 @@ function AddDog({ spaData, addDog }) {
                 </label>
 
                 <label className='label'>
+                    Spa
                     <select className='dropdown' 
                         onChange={(e) => {
                             const selectedSpa = e.target.value;
@@ -88,9 +91,9 @@ function AddDog({ spaData, addDog }) {
                       ))}
                     </select>
                 </label>
-                <button type="submit">Check-in!!</button>
+                </div>
             </form>
-
+            <button className="check-in-btn" type="submit">Check-in!!</button>
         </div>
     )
 }
