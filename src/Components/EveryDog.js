@@ -1,9 +1,35 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom'
 
-
-function EveryDog({ dogs }) {
+function EveryDog({ dogs, checkOut, amendDog }) {
   
-    const {dog_name, breed, age, description, dog_image} = dogs
+    const {dog_name, breed, age, description, dog_image, id} = dogs
+
+
+       
+    function deletesDog() {
+        fetch(`http://localhost:9292/dogs/${id}`, {
+            method: "DELETE",
+      
+        })   
+            
+            // checkOut(id)
+            checkOut(dogs)
+            let path = '/spas'
+            history.push(path)
+           
+    }
+
+    const history = useHistory()
+    
+    function updateDog() {
+        
+        let path = '/update'
+        history.push(path)
+
+        amendDog(dogs)
+}
+    
 
 
 
@@ -15,6 +41,11 @@ function EveryDog({ dogs }) {
             <h3>Age: {age}</h3>
             <p>{description}</p>
           
+            <div>
+           <button className="btn-1" onClick={updateDog}>Update Info</button> 
+          
+          <button className="btn-2"  onClick={deletesDog}>Check-Out</button>
+           </div>
         </div>
     )
 }

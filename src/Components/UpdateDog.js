@@ -41,9 +41,9 @@ function UpdateDog({  handleChange, editDog, dogInfo}) {
                 <h2>Update your dog info</h2>
 
                 <div class="flexbox-container-update-form">
-                <lable className="label">
+                <label className="label">
                     <img  className="input" style={{  width: 200, height: 200 }} src={dogInfo.dog_image} alt={dogInfo.dog_name}></img>
-                </lable>
+                </label>
 
                 <label className="label">
                     Name 
@@ -70,9 +70,9 @@ function UpdateDog({  handleChange, editDog, dogInfo}) {
                     <input className="input" type="text" name="dog_image" placeholder="Image" onChange={editDoggo} value={dogInfo.dog_image}></input>
                 </label>
                 </div>
-                
+                <button className="update-btn" type="submit">Update</button>
             </form>
-            <button className="update-btn" type="submit">Update</button>
+            
         </div>
     )
     

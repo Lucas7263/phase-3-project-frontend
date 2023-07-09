@@ -1,17 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import { Switch, Route } from 'react-router-dom';
 import SpaList from './SpaList';
-import DogList from './DogList';
 import Home from './Home';
 import NavBar from './NavBar';
 import AddDog from './AddDog';
+import AddSpa from './AddSpa';
 import AllDogs from './AllDogs';
 import UpdateDog from './UpdateDog';
 
 function App() {
   const [spaData, setSpaData] = useState([]);
-  const [guestList, setGuestList] = useState([]);
-  const [dogState, setDogState] = useState([]);
   const [dogInfo, setDogInfo] = useState([]);
 
   
@@ -25,12 +23,10 @@ function App() {
 
 
 
-  
 
   function addDog(newDog) {
   
-    const newGuest = spaData.map(spa => { //Drill down into the assocatied dogs array. Then make copy of array then add the newDog to that copy
-
+    const newGuest = spaData.map(spa => { 
        if(spa.id === newDog.spa_id) {
    
        const addedDog = [...spa.dogs, newDog]
@@ -46,9 +42,47 @@ function App() {
     setSpaData(newGuest)
   }; 
   
+  function addSpa(newSpa) {
+    setSpaData([...spaData, newSpa])
+  }
+
+  
+  function amendDog(dog) {
+    setDogInfo(dog)
+  }
 
 
 
+  function handleChange(name, value) {
+    setDogInfo({
+      ...dogInfo,  [name]: value 
+    
+    })
+  }
+
+  function editDog(updatedDog) {
+    
+        const updatedSpadata = spaData.map(spa => {
+          if (spa.id === updatedDog.spa_id) {
+       
+            const updatedInfo = spa.dogs.map((dog) => dog.id === updatedDog.id ? updatedDog : dog) 
+
+            spa.dogs = updatedInfo
+            return spa
+          
+            
+          } else {
+            return spa
+          }
+
+        }) 
+        setSpaData(updatedSpadata) 
+        
+       
+}
+  
+  
+  
   function handleDeleteDog(deletedDog) {
    
     const deleteDog = spaData.map(spa => {
@@ -71,71 +105,28 @@ function App() {
 
 
 
-  function viewGuests(guests) {
-   
-    setGuestList(guests)
-   
-  };
-
-
-  function amendDog(dog) {
-    setDogInfo(dog)
-  }
-
-
-
-  function handleChange(name, value) {
-    setDogInfo({
-      ...dogInfo,  [name]: value //Shallow copy
-    
-    })
-  }
-
-  function editDog(updatedDog) {
-    
-  
-    const updatedDogsArr = dogState.map(dog => dog.id === updatedDog.id ? updatedDog : dog) 
-        const updatedSpadata = spaData.map(spa => {
-          if (spa.id === updatedDog.spa_id) {
-       
-            const updatedInfo = spa.dogs.map((dog) => dog.id === updatedDog.id ? updatedDog : dog) 
-
-            spa.dogs = updatedInfo
-            return spa
-          
-            
-          } else {
-            return spa
-          }
-
-          
-              
-        }) 
-        setSpaData(updatedSpadata) 
-        
-        setDogState(updatedDogsArr) 
-}
-
   return (
     <div>
       <NavBar />
       <Switch>
     
         <Route path="/spas">
-             <SpaList    spaData={spaData} viewGuests={viewGuests}/>  
+             <SpaList    spaData={spaData} />  
         </Route>
 
-        <Route path="/guests"> 
-             <DogList dogGuests={guestList} checkOut={handleDeleteDog} amendDog={amendDog}  /> 
-        </Route>  
+       
       
 
         <Route path="/all-dogs">
-              <AllDogs />
+              <AllDogs checkOut={handleDeleteDog} amendDog={amendDog}/>
         </Route>
 
         <Route path="/check-in">
               <AddDog spaData={spaData} addDog={addDog}/>
+        </Route>
+
+        <Route path='/add-spa'>
+            <AddSpa  addSpa={addSpa}/>
         </Route>
 
         <Route path="/update">
@@ -152,3 +143,6 @@ function App() {
 }
 
 export default App;
+
+
+// https://hips.hearstapps.com/hmg-prod/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=1200:*

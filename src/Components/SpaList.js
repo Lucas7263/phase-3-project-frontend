@@ -1,23 +1,22 @@
 import React from 'react';
 import Spas from './Spas';
 
-// , {useState, useEffect} 
 
 
 
-function SpaList({  spaData, viewGuests  }) {
+function SpaList({  spaData, checkOut, amendDog, viewGuests  }) {
        
     const spas = spaData.map(spa => {
        
         return (
-        <Spas key={spa.id} spa={spa} viewGuests={viewGuests}/>
+        <Spas key={spa.id} spa={spa} checkOut={checkOut} amendDog={amendDog} viewGuests={viewGuests}/>
         
         ) 
     })
 
   
     return(
-        <div class="flexbox-container-spas">
+        <div className="flexbox-container-spas">
            {spas}
         </div>
     )

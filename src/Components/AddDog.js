@@ -92,8 +92,9 @@ function AddDog({ spaData, addDog }) {
                     </select>
                 </label>
                 </div>
+                <button className="check-in-btn" type="submit">Check-in!!</button>
             </form>
-            <button className="check-in-btn" type="submit">Check-in!!</button>
+            
         </div>
     )
 }

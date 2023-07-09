@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import EveryDog from './EveryDog';
 
  
-function AllDogs({ deleteDog }) {
+function AllDogs({checkOut, amendDog}) {
     
    
 const [dogData, setDogData] = useState([]);
@@ -17,13 +17,13 @@ useEffect(() => {
     
 const dogs = dogData.map(dog => {
         
-         return (<EveryDog key={dog.id} dogs={dog} checkOut={deleteDog}/>)
+         return (<EveryDog key={dog.id} dogs={dog} checkOut={checkOut} amendDog={amendDog}/>)
      })
 
    
 
      return(
-         <div class="flexbox-container-all-dogs">
+         <div className="flexbox-container-all-dogs">
              {dogs}
           
          </div>
