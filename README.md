@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Best dog spas
+This is a simple front-end for our application built using React.js.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Installation
+To run this application simply fork and clone this repository then navigate to it in your terminal.
 
-## Available Scripts
+In your terminal run this command to fire up the application.
 
-In the project directory, you can run:
+npm start
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Usage
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## The spa list
+In this application, you will be able to see a list of favorite dog spas and information regarding each one.
 
-### `npm test`
+You will also be able to view the current guests of each of these spas using a dropdown box.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Adding a spa
+Using the navigation bar at the top of the page you can click on Add Spa and be brought to a page with a form that
+you can fill out to add a new spa to the spa list.
 
-### `npm run build`
+## Checking in a dog
+In the navigation bar at the top of the page, there is a "Check-in" link that will bring you to another form that you can fill out to add a new dog to the application.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+In this form, there is a dropdown box that you use to select which spa you would like your dog to be checked into.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+After clicking the check-in button you will be brought to the spa list page where you can see your dog as a new guest of the spa you selected.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## All dogs
+Following this link will bring you to a list of all the dogs currently staying at all of the spas.
 
-### `npm run eject`
+Here you can see all the info about each dog as well as two buttons for each one.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+The first button is an update button where you may edit the information for your dog to correct any mistakes made when first checking it into a spa.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The second button is a check-out button which will remove your selected dog from its current spa and be removed entirely from the application.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
